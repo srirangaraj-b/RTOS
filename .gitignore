@@ -1,19 +1,71 @@
+# =========================
+# CMake
+# =========================
 CMakeLists.txt.user
 CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
+CMakeFiles/
+CMakeScripts/
+Testing/
 Makefile
 cmake_install.cmake
 install_manifest.txt
-compile_commands.json
 CTestTestfile.cmake
-_deps
+compile_commands.json
 CMakeUserPresets.json
+_deps/
 
-# CLion
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#cmake-build-*
+# =========================
+# Zephyr RTOS
+# =========================
+build/
+build-*/
+out/
+.cache/
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.log
+
+# =========================
+# CLion / JetBrains
+# =========================
+.idea/
+cmake-build-*/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Obsidian
+# =========================
+
+# Ignore workspace UI state only
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Cache
+.obsidian/cache/
+
+# Plugin cache/data (optional)
+.obsidian/plugins/*/data.json
+
+# =========================
+# Operating System
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
