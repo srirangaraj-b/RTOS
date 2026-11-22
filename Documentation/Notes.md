@@ -15,7 +15,7 @@
 	* Storage
 	* Keyboard
 	* Display
-	* Network Interface
+	* Network Interface 
 
 
 ## RTOS: 
