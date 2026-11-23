@@ -43,3 +43,63 @@
 | Hard | Must not be missed          | Failure                    |
 | Firm | Late result is useless      | Quality or functional loss |
 | Soft | Occasional misses tolerated | Reduced performance        |
+
+### Determinism:
+Determinism means that the system behaves predictably under defined conditions.
+
+For an RTOS, determinism particularly concerns execution and response times,
+
+Eg:
+Suppose a task needs 2 ms of the CPU execution time.
+* Best-case execution time: 2ms
+* Worst-case execution time: 2ms
+
+However, the actual response time may be longer because the task could be waiting for CPU access, synchronization, or an interrupt.
+
+A deterministic system aims to establish meaningful upper bounds or these delays.
+
+Two important terms:
+* WCET: Worst-Case Execution Time.
+* BCET: Best-Case Execution Time.
+
+Determinism is one of the most important principles in real-time system design.
+
+# RTOS  Architecture:
+
+RTOS generally consist of several major components.
+
+|Component|Responsibility|
+|---|---|
+|Kernel|Core operating system functionality|
+|Scheduler|Determines which task executes|
+|Task management|Creates and manages tasks|
+|Interrupt management|Handles hardware interrupts|
+|Synchronization|Coordinates shared resources|
+|IPC|Communication between tasks|
+|Memory management|Manages memory resources|
+|Timer management|Handles timing events|
+|Device drivers|Interfaces with hardware|
+
+## 1. Kernel:
+
+The kernel is the central component of an operating system.
+
+It manages the fundamental operations required to execute multiple tasks.
+
+Its responsibilities include:
+* Task Management
+* Scheduling
+* Context Switching
+* Synchronization
+* Inter-Task Communication
+* Timing Services
+
+An RTOS kernel is generally much smaller than a desktop operating system kernel.
+
+However, the exact functionality depends on RTOS implementation.
+
+For example:
+
+* Zephyr has a modular kernel with a broad set of operating system services.
+* FreeRTOS provides a relatively small real-time kernel.
+* ThreadX provides real-time scheduling and synchronization services.
