@@ -118,15 +118,47 @@ static void command(uint8_t cmd)
 
 static void update_ctrl(void) { command(CMD_DISPLAY_CTRL | disp_ctrl); }
 
-void lcd_display_on(void)  { disp_ctrl |=  DISP_ON;   update_ctrl(); }
-void lcd_display_off(void) { disp_ctrl &= ~DISP_ON;   update_ctrl(); }
-void lcd_cursor_on(void)   { disp_ctrl |=  CURSOR_ON; update_ctrl(); }
-void lcd_cursor_off(void)  { disp_ctrl &= ~CURSOR_ON; update_ctrl(); }
-void lcd_blink_on(void)    { disp_ctrl |=  BLINK_ON;  update_ctrl(); }
-void lcd_blink_off(void)   { disp_ctrl &= ~BLINK_ON;  update_ctrl(); }
+void lcd_display_on(void)  
+{ 
+    disp_ctrl |=  DISP_ON;
+    update_ctrl(); 
+}
+
+void lcd_display_off(void) 
+{ 
+    disp_ctrl &= ~DISP_ON;   
+    update_ctrl(); 
+}
+
+void lcd_cursor_on(void)   
+{ 
+    disp_ctrl |=  CURSOR_ON; 
+    update_ctrl(); 
+}
+
+void lcd_cursor_off(void)  
+{ 
+    disp_ctrl &= ~CURSOR_ON; 
+    update_ctrl(); 
+}
+
+void lcd_blink_on(void)    
+{ 
+    disp_ctrl |=  BLINK_ON;  
+    update_ctrl(); 
+}
+
+void lcd_blink_off(void)   
+{ 
+    disp_ctrl &= ~BLINK_ON;  
+    update_ctrl(); 
+}
 
 
-void lcd_write_char(uint8_t data) { send(data, 1); }
+void lcd_write_char(uint8_t data) 
+{ 
+    send(data, 1); 
+}
 
 void lcd_print(const char *str)
 {
@@ -135,8 +167,14 @@ void lcd_print(const char *str)
 	}
 }
 
-void lcd_scroll_left(void)  { command(CMD_SHIFT | SHIFT_DISPLAY); }
-void lcd_scroll_right(void) { command(CMD_SHIFT | SHIFT_DISPLAY | SHIFT_RIGHT); }
+void lcd_scroll_left(void)  
+{ 
+    command(CMD_SHIFT | SHIFT_DISPLAY); 
+}
+void lcd_scroll_right(void) 
+{ 
+    command(CMD_SHIFT | SHIFT_DISPLAY | SHIFT_RIGHT); 
+}
 
 void lcd_create_char(uint8_t location, const uint8_t pattern[8])
 {
@@ -145,7 +183,7 @@ void lcd_create_char(uint8_t location, const uint8_t pattern[8])
 	for (int i = 0; i < 8; i++) {
 		lcd_write_char(pattern[i]);
 	}
-	command(CMD_SET_DDRAM);          /* back to DDRAM */
+	command(CMD_SET_DDRAM);         
 }
 
 void lcd_set_cursor(uint8_t row, uint8_t col)
