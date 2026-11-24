@@ -237,22 +237,22 @@ A typical write operation:
 
 ### **Complete command reference**
 
-|Instruction|Command|Execution time (approx.)|
-|---|---|---|
-|Clear display|0x01|1.52 ms|
-|Return home|0x02|1.52 ms|
-|Entry mode|0x06|37 µs|
-|Display ON, cursor OFF|0x0C|37 µs|
-|Display ON, cursor ON|0x0E|37 µs|
-|Display OFF|0x08|37 µs|
-|Cursor left|0x10|37 µs|
-|Cursor right|0x14|37 µs|
-|Display left|0x18|37 µs|
-|Display right|0x1C|37 µs|
-|Function set|0x28|37 µs|
-|CGRAM address|0x40|37 µs|
-|DDRAM row 1 start|0x80|37 µs|
-|DDRAM row 2 start|0xC0|37 µs|
+| Instruction            | Command | Execution time (approx.) |
+| ---------------------- | ------- | ------------------------ |
+| Clear display          | 0x01    | 1.52 ms                  |
+| Return home            | 0x02    | 1.52 ms                  |
+| Entry mode             | 0x06    | 37 µs                    |
+| Display ON, cursor OFF | 0x0C    | 37 µs                    |
+| Display ON, cursor ON  | 0x0E    | 37 µs                    |
+| Display OFF            | 0x08    | 37 µs                    |
+| Cursor left            | 0x10    | 37 µs                    |
+| Cursor right           | 0x14    | 37 µs                    |
+| Display left           | 0x18    | 37 µs                    |
+| Display right          | 0x1C    | 37 µs                    |
+| Function set           | 0x28    | 37 µs                    |
+| CGRAM address          | 0x40    | 37 µs                    |
+| DDRAM row 1 start      | 0x80    | 37 µs                    |
+| DDRAM row 2 start      | 0xC0    | 37 µs                    |
 
 These are typical HD44780 datasheet execution times, not universal guarantees for every clone or module. Consult the actual controller datasheet.
 
