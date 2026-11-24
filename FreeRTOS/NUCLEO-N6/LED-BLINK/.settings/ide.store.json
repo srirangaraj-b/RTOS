@@ -1,0 +1,11 @@
+{
+  "board": "NUCLEO-N657X0-Q",
+  "device": "STM32N657Z0H3Q",
+  "core": "Cortex-M55",
+  "order": 0,
+  "tz": "Secure-only",
+  "toolchain": "GCC",
+  "source": {
+    "sourceType": "Empty"
+  }
+}

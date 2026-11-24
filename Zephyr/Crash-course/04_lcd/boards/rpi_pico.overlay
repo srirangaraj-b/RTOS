@@ -1,0 +1,44 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+    gpio_devices {
+
+        lcd {
+            compatible = "gpio-leds";
+
+            lcd_rs: rs {
+                gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+            };
+
+            lcd_en: en {
+                gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+            };
+
+            lcd_d4: d4 {
+                gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+            };
+
+            lcd_d5: d5 {
+                gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
+            };
+
+            lcd_d6: d6 {
+                gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+            };
+
+            lcd_d7: d7 {
+                gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+            };
+        };
+    };
+
+    aliases {
+        lcd-rs = &lcd_rs;
+        lcd-en = &lcd_en;
+
+        lcd-d4 = &lcd_d4;
+        lcd-d5 = &lcd_d5;
+        lcd-d6 = &lcd_d6;
+        lcd-d7 = &lcd_d7;
+    };
+};

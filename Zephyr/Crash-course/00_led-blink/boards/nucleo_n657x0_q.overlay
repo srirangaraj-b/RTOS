@@ -1,0 +1,15 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/{
+    leds{
+        compatible = "gpio-leds";
+
+        my_led: led_1 {
+            gpios = <&gpiog 10 GPIO_ACTIVE_LOW>;
+        };
+    };
+
+    aliases{
+        my-led = &my_led;
+    };
+};

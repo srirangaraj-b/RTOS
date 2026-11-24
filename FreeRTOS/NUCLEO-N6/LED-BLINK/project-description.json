@@ -1,0 +1,236 @@
+{
+  "name": "LED-BLINK",
+  "configurations": [
+    {
+      "name": "Debug",
+      "type": "Executable",
+      "output_filename": "LED-BLINK",
+      "mcu": "STM32N657X0H3Q",
+      "board": "NUCLEO-N657X0-Q",
+      "dsecure": "Secure-only",
+      "toolchain_type": "GCC",
+      "toolchain_prefix": "",
+      "sources": [
+        {
+          "path": "Src/syscall.c"
+        },
+        {
+          "path": "Src/sysmem.c"
+        },
+        {
+          "path": "Src/main.c"
+        },
+        {
+          "path": "Src/startup_stm32n657xx.S"
+        }
+      ],
+      "tools": [
+        {
+          "type": "c_assembler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-O0",
+            "-g3",
+            "-ggdb",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX",
+            "-DDEBUG",
+            "-x",
+            "assembler-with-cpp",
+            "-MMD",
+            "-MP"
+          ]
+        },
+        {
+          "type": "c_compiler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-O0",
+            "-g3",
+            "-ggdb",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX",
+            "-DDEBUG"
+          ]
+        },
+        {
+          "type": "cpp_compiler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-O0",
+            "-g3",
+            "-ggdb",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX",
+            "-DDEBUG",
+            "-fno-rtti",
+            "-fno-exceptions",
+            "-fno-threadsafe-statics"
+          ]
+        },
+        {
+          "type": "cpp_linker",
+          "flags": [
+            "-Tstm32n657x0_axisram2_fsbl_flash.ld",
+            "-Wl,-Map=LED-BLINK.map",
+            "-u",
+            "_printf_float",
+            "--specs=nosys.specs",
+            "-Wl,--start-group",
+            "-lc",
+            "-lm",
+            "-lstdc++",
+            "-lsupc++",
+            "-Wl,--end-group",
+            "-Wl,-z,max-page-size=8",
+            "-Wl,--print-memory-usage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Release",
+      "type": "Executable",
+      "output_filename": "LED-BLINK",
+      "mcu": "STM32N657X0H3Q",
+      "board": "NUCLEO-N657X0-Q",
+      "dsecure": "Secure-only",
+      "toolchain_type": "GCC",
+      "toolchain_prefix": "",
+      "sources": [
+        {
+          "path": "Src/syscall.c"
+        },
+        {
+          "path": "Src/sysmem.c"
+        },
+        {
+          "path": "Src/main.c"
+        },
+        {
+          "path": "Src/startup_stm32n657xx.S"
+        }
+      ],
+      "tools": [
+        {
+          "type": "c_assembler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-Os",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX",
+            "-x",
+            "assembler-with-cpp",
+            "-MMD",
+            "-MP"
+          ]
+        },
+        {
+          "type": "c_compiler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-Os",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX"
+          ]
+        },
+        {
+          "type": "cpp_compiler",
+          "flags": [
+            "-fdata-sections",
+            "-ffunction-sections",
+            "-std=gnu11",
+            "-Wl,--gc-sections",
+            "-Wno-comment",
+            "-fstack-usage",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wno-unused-parameter",
+            "-Os",
+            "-mcmse",
+            "-IInc",
+            "-DRTE_DEVICE_STARTUP_STM32N6XX",
+            "-fno-rtti",
+            "-fno-exceptions",
+            "-fno-threadsafe-statics"
+          ]
+        },
+        {
+          "type": "cpp_linker",
+          "flags": [
+            "-Tstm32n657x0_axisram2_fsbl_flash.ld",
+            "-Wl,-Map=LED-BLINK.map",
+            "-u",
+            "_printf_float",
+            "--specs=nosys.specs",
+            "-Wl,--start-group",
+            "-lc",
+            "-lm",
+            "-lstdc++",
+            "-lsupc++",
+            "-Wl,--end-group",
+            "-Wl,-z,max-page-size=8",
+            "-Wl,--print-memory-usage"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_ide": "Empty",
+  "path": "C:\\Users\\NGLPC~1\\AppData\\Local\\Temp\\stm32cube_for_vscode_empty_project_AwodRr",
+  "languages": [
+    "CPP",
+    "C"
+  ]
+}
