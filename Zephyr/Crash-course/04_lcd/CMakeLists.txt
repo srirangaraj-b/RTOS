@@ -4,4 +4,8 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
 project(lcd)
 
-target_sources(app PRIVATE src/main.c)
+target_include_directories(app PRIVATE
+    inc
+)
+
+target_sources(app PRIVATE src/main.c src/lcd.c)
