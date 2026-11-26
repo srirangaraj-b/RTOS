@@ -1,32 +1,29 @@
-
-/ {
-    my_adc: zephyr,user {
-        io-channels = <&adc 2>, <&adc 1>;
-        io-channel-names = "a1", "a2";
+/{
+    myadcs: zephyr,user{
+        io-channels = <&adc 1>, <&adc 2>;
+        io-channel-names = "a1", "a2" ;
     };
 
-    aliases {
-        my-adc = &my_adc;
+    aliases{
+        myadc = &myadcs;  
     };
 };
 
-
-
-&adc {
-    #address-cells = <1>;
+&adc{
     #size-cells = <0>;
+    #address-cells = <1>;
     status = "okay";
 
-    channel@2 {
-        reg = <2>;
+    channel@1{
+        reg = <1>;
         zephyr,gain = "ADC_GAIN_1";
         zephyr,reference = "ADC_REF_INTERNAL";
         zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
         zephyr,resolution = <12>;
     };
 
-    channel@1 {
-        reg = <1>;
+    channel@2{
+        reg = <2>;
         zephyr,gain = "ADC_GAIN_1";
         zephyr,reference = "ADC_REF_INTERNAL";
         zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;

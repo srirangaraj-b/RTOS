@@ -1,0 +1,34 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/{
+    device_leds{
+        compatible = "gpio-leds";
+
+        my_led1: led_1{
+            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        };
+
+        my_led2: led_2{
+            gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    device_buttons{
+        compatible = "gpio-keys";
+        
+        my_button1: button_1{
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+
+        my_button2: button2{
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+
+    aliases{
+        led1 = &my_led1;
+        led2 = &my_led2;
+        button1 = &my_button1;
+        button2 = &my_button2;
+    };
+};
