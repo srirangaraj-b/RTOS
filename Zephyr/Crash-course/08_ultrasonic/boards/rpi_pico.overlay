@@ -1,3 +1,18 @@
 /{
-    
+    ultrasonic_trig{
+        compatible = "gpio-leds";
+        trigg_pin: pin15{
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+    ultrasonic_echo{
+        compatible = "gpio-keys";
+        echo_pin: pin14{
+            gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>;
+        };
+    };
+    aliases{
+        trigg = &trigg_pin;
+        echo = &echo_pin;
+    };
 };
