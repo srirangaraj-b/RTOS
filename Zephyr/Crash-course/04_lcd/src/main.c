@@ -1,9 +1,6 @@
 #include <zephyr/kernel.h>
 #include "lcd.h"
 
-/* ---- EDIT HERE: LCD pin configuration ----
- * Port = GPIO controller node label of your board (gpioa, gpiob, gpio0, ...)
- * Number = pin number on that port. RW pin of LCD -> GND. */
 #define LCD_PORT DEVICE_DT_GET(DT_NODELABEL(gpio0))
 
 #define LCD_PIN(num) { .port = LCD_PORT, .pin = (num), .dt_flags = 0 }

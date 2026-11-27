@@ -1,0 +1,48 @@
+/{
+    lcd_devices{
+
+        compatible = "gpio-leds";
+
+        rs_pin: rs_pin{
+            gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+        };
+        en_pin: en_pin{
+            gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        };
+        d4_pin: d4_pin{
+            gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+        };
+        d5_pin: d5_pin{
+            gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
+        };
+        d6_pin: d6_pin{
+            gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+        };
+        d7_pin: d7_pin{
+            gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    gpio_keys{
+        compatible = "gpio-keys";
+
+        clear_button: button1{
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+
+        reset_button: button2{
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+
+    aliases{
+        en = &en_pin;
+        rs = &rs_pin;
+        d4 = &d4_pin;
+        d5 = &d5_pin;
+        d6 = &d6_pin;
+        d7 = &d7_pin;
+        clear = &clear_button;
+        reset = &reset_button;
+    };
+};
